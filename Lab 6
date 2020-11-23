@@ -1,0 +1,146 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.linalg as la 
+%matplotlib inline
+def describe_mat(matrix):
+    print(f'Matrix:\n{matrix}\n\nShape:\t{matrix.shape}\nRank:\t{matrix.ndim}\n')
+A = np.array([
+    [1,3],
+    [3,2]
+])
+describe_mat(A)
+Matrix:
+[[1 3]
+ [3 2]]
+
+Shape:	(2, 2)
+Rank:	2
+
+row_mat_1D = np.array([
+    3, 3, 2
+])
+row_mat_2D = np.array([
+    [2,3,3]
+])
+describe_mat(row_mat_1D)
+describe_mat(row_mat_2D)
+Matrix:
+[3 3 2]
+
+Shape:	(3,)
+Rank:	1
+
+Matrix:
+[[2 3 3]]
+
+Shape:	(1, 3)
+Rank:	2
+
+col_mat = np.array([
+    [1],
+    [2],
+    [2]
+])
+describe_mat(col_mat)
+Matrix:
+[[1]
+ [2]
+ [2]]
+
+Shape:	(3, 1)
+Rank:	2
+
+def describe_mat(matrix):
+    is_square = True if matrix.shape[0] == matrix.shape[1] else False 
+    print(f'Matrix:\n{matrix}\n\nShape:\t{matrix.shape}\nRank:\t{matrix.ndim}\nIs Square: {is_square}\n')
+square_mat = np.array([
+    [3,3,1],
+    [2,3,3],
+    [1,3,3]
+])
+
+non_square_mat = np.array([
+    [3,3,1],
+    [2,3,3]
+])
+describe_mat(square_mat)
+describe_mat(non_square_mat)
+Matrix:
+[[3 3 1]
+ [2 3 3]
+ [1 3 3]]
+
+Shape:	(3, 3)
+Rank:	2
+Is Square: True
+
+Matrix:
+[[3 3 1]
+ [2 3 3]]
+
+Shape:	(2, 3)
+Rank:	2
+Is Square: False
+
+ones_mat_row = np.ones((3,2))
+ones_mat_sqr = np.ones((3,3))
+ones_mat_rct = np.ones((1,1))
+
+print(f'Ones Row Matrix: \n{ones_mat_row}')
+print(f'Ones Square Matrix: \n{ones_mat_sqr}')
+print(f'Ones Rectangular Matrix: \n{ones_mat_rct}')
+Ones Row Matrix: 
+[[1. 1.]
+ [1. 1.]
+ [1. 1.]]
+Ones Square Matrix: 
+[[1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+Ones Rectangular Matrix: 
+[[1.]]
+A = np.array([
+    [2,2],
+    [3,2],
+    [1,2]
+])
+B = np.array([
+    [3,3],
+    [2,3],
+    [1,1]
+])
+A+B
+array([[5, 5],
+       [5, 5],
+       [2, 3]])
+2+A
+array([[4, 4],
+       [5, 4],
+       [3, 4]])
+A-B
+array([[-1, -1],
+       [ 1, -1],
+       [ 0,  1]])
+2-B == 2*np.ones(B.shape)-B
+array([[ True,  True],
+       [ True,  True],
+       [ True,  True]])
+A*B
+np.multiply(A,B)
+array([[6, 6],
+       [6, 6],
+       [1, 2]])
+2*A
+array([[4, 4],
+       [6, 4],
+       [2, 4]])
+alpha=3**-3
+A/(alpha+B)
+array([[0.65853659, 0.65853659],
+       [1.47272727, 0.65853659],
+       [0.96428571, 1.92857143]])
+np.add(A,B)
+array([[5, 5],
+       [5, 5],
+       [2, 3]])
+ 
